@@ -1,0 +1,24 @@
+body{
+  background: #fefefe;
+}
+form{
+  width: 35%;
+  margin: 200px auto;
+}
+
+.form__input{
+  width: 100%;
+  height: 30px;
+}
+.submit{
+  padding: 8px 15px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background: #5F6367;
+  color: #fff;
+}
+input, textarea, select:focus{
+ outline:none;
+}
