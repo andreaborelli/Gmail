@@ -9,18 +9,16 @@ function Submit() {
   var object = document.getElementById("object").value;
   var message = document.getElementById("message").value;
 
-  /*document.getElementById('form').submit();*/
-  /*console.log(sender);
-  console.log(to);
-  console.log(object);*/
-
-document.write(from + " " + to + " " + object + " " + message);
+console.log(from + " " + to + " " + object + " " + message);
+window.addMessage(from, to, object, message);
+window.opener.addMessage(to);
+window.close();
 };
 
-function addMessage() {
+function addMessage(from, to, object, message) {
   var addNewMail = document.createElement("div");
-  addNewMail.innerHTML = "messaggio";
-  document.getElementById("submit").appendChild(addNewMail);
+  addNewMail.innerHTML = from + " " + to + " " + object + " " + message;
+  document.getElementById("newmessage").appendChild(addNewMail);
 }
 
 
