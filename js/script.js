@@ -17,11 +17,47 @@ window.close();
 
 function addMessage(from, to, object, message) {
   var addNewMail = document.createElement("div");
- /* addNewMail = document.createElement("input");
-  addNewMail = document.createElement("h3");
-  addNewMail = document.createElement("h4");*/
-  addNewMail.classList.add("emailRow", "emailRow__options", "emailRow__title", "emailRow__message");
-  addNewMail.innerHTML = from + " " + to + " " + object + " " + message;
+  addNewMail.classList.add("emailRow");
+
+var messageTemplate = '<div class="emailRow__options">' +
+ ' <input type="checkbox"/> ' +
+'</div>' +
+'<h3 class="emailRow__title">'+from+'</h3>'+ 
+'<div class="emailRow__message">' +
+'<h4>'+object+
+  '<span class="emailRow__description">'+ ' - ' +message+'</span>'+
+'</h4>'+
+'</div>'+'<p class="emailRow__time">'+'10 apr'+'</p>';
+
+// completo il template html
+  addNewMail.innerHTML = messageTemplate;
   document.getElementById("newMessage").appendChild(addNewMail);
 };
 
+var messages = {
+  from: " Andrea",
+  to: "luca@mail.it",
+  object: "Corso",
+  message: "Corso in preparazione",
+  Message: function(){
+    return this.from + " " + this.to + " " + this.object + " " + this.message;
+  }
+}
+messages.Message();
+
+//var message = ["Andrea", "luca@mail.it", "object", "message"]
+//alert(message[0]); 
+
+function loadMessages() {
+  console.log("Load Messages");
+  messageList = [];
+//creo un oggetto messaggio 
+  //aggiungo un messaggio all' array
+  console.log("Ci sono "+messageList.length+ " messaggi");
+
+  //chiamo la funzione addMessage() per visualizzare il primo elemento dell' array nella pagina
+
+  // successivamente, faccio un ciclo per leggere tutti gli elementi dell' array e aggiungerli
+
+
+}
