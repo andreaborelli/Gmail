@@ -1,24 +1,26 @@
+
+// apertura finestra su +
 function Email() {
   var popup = window.open('form.html', 'email', 'popup');
   document.getElementById('form').addMessage();
 };
 
+// invio dati al click
 function Submit() {
   var from = document.getElementById("from").value;
   var to = document.getElementById("to").value;
   var object = document.getElementById("object").value;
   var message = document.getElementById("message").value;
-
 //console.log(from + " " + to + " " + object + " " + message);
 window.addMessage(from, to, object, message);
 window.opener.addMessage(from, to, object, message);
 window.close();
 };
 
+// template html
 function addMessage(from, to, object, message) {
   var addNewMail = document.createElement("div");
   addNewMail.classList.add("emailRow");
-
 var messageTemplate = '<div class="emailRow__options">' +
  ' <input type="checkbox"/> ' +
 '</div>' +
@@ -28,11 +30,12 @@ var messageTemplate = '<div class="emailRow__options">' +
   '<span class="emailRow__description">'+ ' - ' +message+'</span>'+
 '</h4>'+
 '</div>'+'<p class="emailRow__time">'+'10 apr'+'</p>';
-
-// completo il template html
   addNewMail.innerHTML = messageTemplate;
   document.getElementById("newMessage").appendChild(addNewMail);
 };
+
+
+
 
 var messages = {
   from: " Andrea",
