@@ -34,10 +34,32 @@ var messageTemplate = '<div class="emailRow__options">' +
   document.getElementById("newMessage").appendChild(addNewMail);
 };
 
+//creo un oggetto messaggio 
+  //aggiungo un messaggio all' array
+var messageList = [
+  {
+    from: " Andrea",
+    to: "andrea@mail.it",
+    object: "Corso",
+    message: "Corso in preparazione",
+  },
+  {
+    from: " Luca",
+    to: "luca@mail.it",
+    object: "Corso",
+    message: "Corso in preparazione",
+  },
+  {
+    from: "Giulio",
+    to: "giulio@mail.it",
+    object: "Corso",
+    message: "Corso in preparazione",
+  }
+]
+console.log("Ci sono "+messageList.length+ " messaggi");
+//alert(messageList[0]);
 
-
-
-var messages = {
+/*var messages = {
   from: " Andrea",
   to: "luca@mail.it",
   object: "Corso",
@@ -47,16 +69,14 @@ var messages = {
   }
 }
 messages.Message();
-
 //var message = ["Andrea", "luca@mail.it", "object", "message"]
 //alert(message[0]); 
-
+*/
 function loadMessages() {
   console.log("Load Messages");
-  messageList = [];
-//creo un oggetto messaggio 
-  //aggiungo un messaggio all' array
-  console.log("Ci sono "+messageList.length+ " messaggi");
+  messageList = [0];
+
+
 
   //chiamo la funzione addMessage() per visualizzare il primo elemento dell' array nella pagina
 
