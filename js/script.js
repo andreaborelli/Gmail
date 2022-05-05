@@ -2,7 +2,7 @@
 // apertura finestra su +
 function Email() {
   var popup = window.open('form.html', 'email', 'popup');
-  document.getElementById('form').addMessage();
+  document.getElementById('form');
 };
 
 // invio dati al click
@@ -58,8 +58,8 @@ var messageList = [
 ]
 console.log("Ci sono "+messageList.length+ " messaggi");
 //alert(messageList[0]);
-
-/*var messages = {
+/*
+var messages = {
   from: " Andrea",
   to: "luca@mail.it",
   object: "Corso",
@@ -68,13 +68,12 @@ console.log("Ci sono "+messageList.length+ " messaggi");
     return this.from + " " + this.to + " " + this.object + " " + this.message;
   }
 }
-messages.Message();
+messages.Message();*/
 //var message = ["Andrea", "luca@mail.it", "object", "message"]
 //alert(message[0]); 
-*/
+
 function loadMessages() {
-  console.log("Load Messages");
-  messageList = [0];
+  window.location.reload();
 
 
 
@@ -82,5 +81,10 @@ function loadMessages() {
 
   // successivamente, faccio un ciclo per leggere tutti gli elementi dell' array e aggiungerli
 
-
 }
+//addMessage();
+
+// messageList.push(messageList);
+
+
+messageList = [0];
