@@ -2,7 +2,6 @@
 // apertura finestra su +
 function Email() {
   var popup = window.open('form.html', 'email', 'popup');
-  document.getElementById('form');
 };
 
 // invio dati al click
@@ -11,8 +10,6 @@ function Submit() {
   var to = document.getElementById("to").value;
   var object = document.getElementById("object").value;
   var message = document.getElementById("message").value;
-//console.log(from + " " + to + " " + object + " " + message);
-window.addMessage(from, to, object, message);
 window.opener.addMessage(from, to, object, message);
 window.close();
 };
@@ -33,6 +30,7 @@ var messageTemplate = '<div class="emailRow__options">' +
   addNewMail.innerHTML = messageTemplate;
   document.getElementById("newMessage").appendChild(addNewMail);
 };
+
 
 //creo un oggetto messaggio 
   //aggiungo un messaggio all' array
@@ -57,34 +55,24 @@ var messageList = [
   }
 ]
 console.log("Ci sono "+messageList.length+ " messaggi");
-//alert(messageList[0]);
-/*
-var messages = {
-  from: " Andrea",
-  to: "luca@mail.it",
-  object: "Corso",
-  message: "Corso in preparazione",
-  Message: function(){
-    return this.from + " " + this.to + " " + this.object + " " + this.message;
-  }
-}
-messages.Message();*/
-//var message = ["Andrea", "luca@mail.it", "object", "message"]
-//alert(message[0]); 
 
 function loadMessages() {
-  window.location.reload();
+  window.addMessage(messageList[0].from, messageList[0].to, messageList[0].object, messageList[0].message);
+}
 
+//da sistemare tipo submit
 
 
   //chiamo la funzione addMessage() per visualizzare il primo elemento dell' array nella pagina
 
   // successivamente, faccio un ciclo per leggere tutti gli elementi dell' array e aggiungerli
 
-}
-//addMessage();
-
-// messageList.push(messageList);
 
 
-messageList = [0];
+// pulsante cestino
+
+// hamburger al click aprire finestra laterale
+
+//la funzione reload carica tutto 
+
+// stilizzare form
