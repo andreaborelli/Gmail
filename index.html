@@ -3,7 +3,10 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,600&display=swap" rel="stylesheet">
+
+    <link rel="icon" href="img/favicon-gmail.ico" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/style.css">
 
@@ -34,7 +37,7 @@
     <div class="main__body">
       <!-- Sidebar -->
       <div class="sidebar">
-      <button class="sidebar__compose" onclick="Email()">Compose <i class="fa fa-plus fa-2x" aria-hidden="true"></i></button>
+      <button class="sidebar__compose" onclick="Email()"> <img src="img/create_32dp.png" alt=""><span>Scrivi</span></button>
         <div class="sidebarOption">
           <h3>Posta in arrivo</h3>
         </div>
@@ -70,7 +73,7 @@
             <h4 > Mittente</h4>
             <h4> Titolo </h4>
             <h4> Data </h4>
-            <button onclick="loadMessages()">RELOAD</button>
+            <button class="reload" onclick="loadMessages()">Reload</button>
         </div>
 
 
@@ -94,61 +97,7 @@
         <!-- Email List -->
         <div class="emailList__list">
           <div id="newMessage"></div>
-          
-          <!-- Email Row 
-          <div class="emailRow">
-            <div class="emailRow__options">
-              <input type="checkbox"/>
-            </div>
-            
-            <h3 class="emailRow__title">YouTube</h3>
-
-            <div class="emailRow__message">
-              <h4>
-                You Got a New Subscriber
-                <span class="emailRow__description"> - on Your Channel Future Coders </span>
-              </h4>
-            </div>
-
-            <p class="emailRow__time">15 apr</p>
-          </div>
-
-          <div class="emailRow">
-            <div class="emailRow__options">
-              <input type="checkbox"/>
-            </div>
-
-            <h3 class="emailRow__title">YouTube</h3>
-
-            <div class="emailRow__message">
-              <h4>
-                You Got a New Subscriber
-                <span class="emailRow__description"> - on Your Channel Future Coders </span>
-              </h4>
-            </div>
-
-            <p class="emailRow__time">15 apr</p>
-          </div>
-
-          <div class="emailRow">
-            <div class="emailRow__options">
-              <input type="checkbox"/>
-            </div>
-
-            <h3 class="emailRow__title">Google</h3>
-
-            <div class="emailRow__message">
-              <h4>
-                Login on New Device<span class="emailRow__description">
-                  - is this your Device ?
-                </span>
-              </h4>
-            </div>
-
-            <p class="emailRow__time">12 apr</p>
-          </div>
-
-          <div class="emailRow">
+          <!-- <div class="emailRow">
             <div class="emailRow__options">
               <input type="checkbox"/>
             </div>
@@ -164,49 +113,8 @@
 
             <p class="emailRow__time">10 apr</p>
           </div>
+        --></div>
 
-          <div class="emailRow">
-            <div class="emailRow__options">
-              <input type="checkbox"/>
-            </div>
-
-            <h3 class="emailRow__title">Google</h3>
-
-            <div class="emailRow__message">
-              <h4>
-                Login on New Device<span class="emailRow__description">
-                  - is this your Device ?
-                </span>
-              </h4>
-            </div>
-
-            <p class="emailRow__time">2 apr</p>
-          </div>
-        -->
-          <div class="emailRow">
-            <div class="emailRow__options">
-              <input type="checkbox"/>
-            </div>
-
-            <h3 class="emailRow__title">YouTube</h3>
-
-            <div class="emailRow__message">
-              <h4>
-                You Got a New Subscriber
-                <span class="emailRow__description"> - on Your Channel Future Coders </span>
-              </h4>
-            </div>
-
-            <p class="emailRow__time">10 apr</p>
-          </div>
-
-        </div>
-
-      </div>
-    </div>
-
-
-</div>
 <script src="js/script.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 
