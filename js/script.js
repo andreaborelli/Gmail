@@ -58,6 +58,8 @@ console.log("Ci sono "+messageList.length+ " messaggi");
 
 function loadMessages() {
   window.addMessage(messageList[0].from, messageList[0].to, messageList[0].object, messageList[0].message);
+  window.addMessage(messageList[1].from, messageList[1].to, messageList[1].object, messageList[1].message);
+
 }
 
 //da sistemare tipo submit
