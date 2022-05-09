@@ -1,48 +1,37 @@
 <!DOCTYPE html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,600&display=swap" rel="stylesheet">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/form.css">
 
-    <link rel="stylesheet" href="css/form.css">
+  <title>messaggio</title>
 
-    <title>messaggio</title>
+</head>
+<body>
+  
+<header>
+  <h3 class="title">Nuovo messaggio</h3>
+</header>
+  <form class="form" onsubmit="return false;" action="index.html" name="form" id="form" method="post">
+    <label for="name">From</label>
+      <input id="from" type="text" name="name" placeholder="mittente" class="form__inputs" required></input>
+    <br>
+      <label for="to">To</label>
+      <input id="to" type="text" name="email" placeholder="destinatari" class="form__inputs" required></input>
+      <br>
+      <label for="object">Object</label>
+      <input id="object" type="text" name="object" placeholder="oggetto" class="form__inputs" required></input>
+      <br>
+      <label for="textarea">Messaggio</label>
+      <textarea id="message" type="text" name="message" placeholder="scrivi qui il tui messaggio..." rows="8" cols="60" class="form__inputs" required></textarea>
+<br>
+<input id="submit" type="submit" name="submit" class="submit" value="Invia" onclick="Submit()"></input>
+  </form>
 
-  </head>
-  <body>
-    <div id="newMessage"></div>
-<form class="form" onsubmit="return false;" action="index.html" name="form" id="form" method="post">
-
-<h2>Messaggio</h2>
-
-<label for="name">From</label>
-  <input type="text" id="from" name="from" placeholder="" class="form__input" required>
-  </input>
-  <br>
-  <br>
-<label for="name">To:</label>
-  <input type="email" name="recipient" placeholder="" id="to" class="form__input" required>
-  </input>
-  <br>
-  <br>
-<label for="name">Subject</label>
-  <input type="text" id="object" name="subject" placeholder="" class="form__input" required>
-  </input>
-  <br>
-  <br>
-  <label for="textarea">Messaggio</label>
-  <br>
-<textarea name="name" id="message" rows="8" cols="60"></textarea>
- <br>
- <br>
-<input type="submit" id="submit" name="submit" value="submit" onclick="Submit()" class="submit">
-</input>
-</form>
+  <script src="js/script.js"></script>
 
 
-<script src="js/script.js"></script>
-
-
-  </body>
-</html>
+</body>
+<html>
