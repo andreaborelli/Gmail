@@ -25,11 +25,24 @@ var messageTemplate = '<div class="emailRow__options">' +
 '<div class="emailRow__message">' +
 '<h4>'+object+
   '<span class="emailRow__description">'+ ' - ' +message+'</span>'+
-'</h4>'+
+'</h4>'+ '<button type="button" id="Delete" onclick="Delete()"><span><i class="fa fa-trash fa-lg" aria-hidden="true"></i></span></button>'+
 '</div>'+'<p class="emailRow__time">'+'10 apr'+'</p>';
   addNewMail.innerHTML = messageTemplate;
   document.getElementById("newMessage").appendChild(addNewMail);
 };
+
+
+/*
+
+<div id="myDIV" class="mystyle">
+This is a DIV element.
+</div>*/
+
+function trash(){
+  var element = document.getElementById("newMessage");
+  element.classList.remove("emailRow");
+}
+
 
 
 //creo un oggetto messaggio 
@@ -64,7 +77,46 @@ function loadMessages() {
 
 //da sistemare tipo submit
 
+folders = {
+  inbox: [  {
+    from: " Andrea",
+    to: "andrea@mail.it",
+    object: "Corso",
+    message: "Corso in preparazione",
+  },
+  {
+    from: " Luca",
+    to: "luca@mail.it",
+    object: "Corso",
+    message: "Corso in preparazione"
+  }
+  ],
+  sent: [
+    {
+      from: " Andrea",
+      to: "andrea@mail.it",
+      object: "inviato",
+      message: "messaggio inviato",
+    }  
+    
+  ]
 
+}
+
+currentFolder = "inbox";
+
+//legarla all onclick dei folder
+function selectFolder(folder) {
+// cambiare il curremt folder
+
+// log del folder corrente
+
+// evidenzio il nome del folder selezionato
+
+//svuoto il div della lista dei messaggi 
+
+//ricarico la lista dei messaggi a partire dall' array del folder che ho scelto
+}
   //chiamo la funzione addMessage() per visualizzare il primo elemento dell' array nella pagina
 
   // successivamente, faccio un ciclo per leggere tutti gli elementi dell' array e aggiungerli
@@ -77,4 +129,4 @@ function loadMessages() {
 
 //la funzione reload carica tutto 
 
-// stilizzare form
+// stilizzare form ok
