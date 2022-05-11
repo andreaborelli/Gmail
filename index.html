@@ -17,8 +17,11 @@
 
     <!-- Header -->
     <div class="header">
+      <div><button type="button" class="burger">
+        <span><i class="fa fa-bars fa-lg" aria-hidden="true"></i></span>
+      </button>
+      </div>
       <div class="header__logo">
-      <button type="button" class="burger" onclick=""><span><i class="fa fa-bars fa-lg" aria-hidden="true"></i></span></button>
 <img src="img/gmail.png" alt="logo">
       </div>
 
@@ -153,7 +156,13 @@
 
 <script src="js/script.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-
-
+<script>
+/* close sidebar */
+$(document).ready(function() {
+  $(".burger" ).on('click', function() {
+    $(".emailList").toggleClass("emailList__close");
+  });
+});
+</script>
   </body>
 </html>
