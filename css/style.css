@@ -28,6 +28,7 @@ a {
   border: none;
   border-radius: 50%;
   margin-left: 20px;
+  cursor: pointer;
 }
 .burger:hover{
   width: 50px;
@@ -43,6 +44,7 @@ a {
 .header__logo {
   display: flex;
   align-items: center;
+  margin-left: -120px;
 }
 
 .header__logo span {
@@ -145,6 +147,7 @@ a {
   flex: 1;
 }
 .emailList__list {
+  background: #fff;
   overflow: scroll;
   height: 400px;
 }
@@ -282,4 +285,7 @@ footer{
 }
 footer a{
   font-size: 12px;
+}
+.emailList__close{
+  margin-left: -260px;
 }
