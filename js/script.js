@@ -32,18 +32,6 @@ var messageTemplate = '<div class="emailRow__options">' +
 };
 
 
-/*
-
-<div id="myDIV" class="mystyle">
-This is a DIV element.
-</div>*/
-
-function trash(){
-  var element = document.getElementById("newMessage");
-  element.classList.remove("emailRow");
-}
-
-
 
 //creo un oggetto messaggio 
   //aggiungo un messaggio all' array
