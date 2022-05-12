@@ -27,7 +27,7 @@ a {
   background: #fff;
   border: none;
   border-radius: 50%;
-  margin-left: 20px;
+  margin: 5px 0 0 15px;
   cursor: pointer;
 }
 .burger:hover{
@@ -75,7 +75,7 @@ a {
 /* Sidebar */
 .sidebar {
   flex: 0.3;
-  max-width: 300px;
+  max-width: 250px;
   padding-right: 20px;
 }
 
@@ -108,8 +108,8 @@ a {
 .sidebarOption {
   display: flex;
   align-items: center;
-  height: 40px;
-  padding: 0 10px;
+  height: 30px;
+  padding: 2px 20px;
   cursor: pointer;
   color: #818181;
 }
@@ -128,6 +128,7 @@ a {
 .sidebarOption__selected{
   color: #DA3025;
   background-color: #FCE8E6;
+  font-weight: bold;
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
 }
@@ -273,6 +274,11 @@ a {
   font-weight: 400;
   color: gray;
 }
+.trash{
+  background: #F5F7F7;
+  border: none;
+  cursor: pointer;
+}
 .fa{
   color: #5F6367;
   padding: 10px;
@@ -287,5 +293,5 @@ footer a{
   font-size: 12px;
 }
 .emailList__close{
-  margin-left: -260px;
+  margin-left: -210px;
 }
