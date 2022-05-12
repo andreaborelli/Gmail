@@ -18,6 +18,7 @@ window.close();
 function addMessage(from, to, object, message) {
   var addNewMail = document.createElement("div");
   addNewMail.classList.add("emailRow");
+
 var messageTemplate = '<div class="emailRow__options">' +
  ' <input type="checkbox"/> ' +
 '</div>' +
@@ -25,18 +26,22 @@ var messageTemplate = '<div class="emailRow__options">' +
 '<div class="emailRow__message">' +
 '<h4>'+object+
   '<span class="emailRow__description">'+ ' - ' +message+'</span>'+
-'</h4>'+ '<button type="button" id="Delete" onclick="Delete()"><span><i class="fa fa-trash fa-lg" aria-hidden="true"></i></span></button>'+
+'</h4>'+ '<button type="button" class="trash" id="Delete" onclick="trash()"><span><i class="fa fa-trash fa-lg" aria-hidden="true"></i></span></button>'+
 '</div>'+'<p class="emailRow__time">'+'10 apr'+'</p>';
   addNewMail.innerHTML = messageTemplate;
   document.getElementById("newMessage").appendChild(addNewMail);
 };
 
 
+function trash(){
+alert("Cancellami");
+}
 
 //creo un oggetto messaggio 
   //aggiungo un messaggio all' array
 var messageList = [
   {
+    id: 1,
     from: " Andrea",
     to: "andrea@mail.it",
     object: "Corso",
@@ -62,8 +67,6 @@ function loadMessages() {
   window.addMessage(messageList[1].from, messageList[1].to, messageList[1].object, messageList[1].message);
 
 }
-
-//da sistemare tipo submit
 
 folders = {
   inbox: [  {
@@ -91,10 +94,19 @@ folders = {
 
 }
 
-currentFolder = "inbox";
+currentFolder = "sent";
+folders[currentFolder]
+console.log("Ci sono "+currentFolder.length+ " messaggi");
+
 
 //legarla all onclick dei folder
 function selectFolder(folder) {
+  console.log(currentFolder);
+
+}
+
+
+
 // cambiare il curremt folder
 
 // log del folder corrente
@@ -104,17 +116,12 @@ function selectFolder(folder) {
 //svuoto il div della lista dei messaggi 
 
 //ricarico la lista dei messaggi a partire dall' array del folder che ho scelto
-}
   //chiamo la funzione addMessage() per visualizzare il primo elemento dell' array nella pagina
 
   // successivamente, faccio un ciclo per leggere tutti gli elementi dell' array e aggiungerli
 
 
 
-// pulsante cestino
 
-// hamburger al click aprire finestra laterale
 
-//la funzione reload carica tutto 
 
-// stilizzare form ok
