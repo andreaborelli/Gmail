@@ -162,9 +162,8 @@ a {
   align-items: center;
   border-bottom: 1px solid #F5F5F5;
   background-color: #fff ;
-  margin: 0 5px;
   z-index: 999;
-  padding: 8px;
+  padding: 5px 0;
 }
 
 .reload{
@@ -181,7 +180,6 @@ a {
   display: flex;
   align-items: center;
   border-bottom-width: 2px;
-  padding: 15px;
   min-width: 200px;
   cursor: pointer;
   color: grey;
@@ -200,7 +198,6 @@ a {
   color: #DA3025;
   border-bottom: 3px solid #DA3025;
 }
-
 .section__selected{
   color: #DA3025;
 }
@@ -214,7 +211,6 @@ a {
 
 .section h4 {
   font-size: 14px;
-  margin-left: 15px;
 }
 
 .emailRow__options {
@@ -233,6 +229,7 @@ a {
   height: 40px;
   border-bottom: 1px solid #C9CBCC;
   border-top: 1px solid #C9CBCC;
+  padding: 0 10px;
   cursor: pointer;
   z-index: 999;
 }
@@ -241,6 +238,10 @@ a {
   border-top: 1px solid #F5F5F5;
   box-shadow: 0 4px 4px -2px rgba(0, 0, 0, 0.24);
   
+}
+.emailRow:active {
+  background: #C2DBFF;
+  border-top: 1px solid #F5F5F5;  
 }
 
 .emailRow__message {
@@ -260,8 +261,9 @@ a {
 }
 
 .emailRow__title {
-  font-size: 13px;
   flex: 0.3;
+  font-size: 13px;
+  padding: 0 20px;
 }
 
 .emailRow__time {
@@ -274,8 +276,18 @@ a {
   font-weight: 400;
   color: gray;
 }
+.checkfull{
+  display: flex;
+  align-items: center;
+  margin: 0 12px;
+}
+input[type='checkbox'] {
+  width: 15px;
+  height: 15px;
+  }
+
 .trash{
-  background: #F5F7F7;
+  background:transparent;
   border: none;
   cursor: pointer;
 }
@@ -294,4 +306,16 @@ footer a{
 }
 .emailList__close{
   margin-left: -210px;
+}
+
+
+.menu-item{
+  display: none;
+}
+
+.menu-item__open{
+  position: relative;
+  width: 100px;
+  height: 200px;
+  background: red;
 }
