@@ -4,8 +4,9 @@ function Email() {
   var popup = window.open('form.html', 'email', 'popup');
 };
 
-function addMessageTosent(fromValue, toValue, objectValue, messageValue) {
+function addMessageTosent(idValue, fromValue, toValue, objectValue, messageValue) {
   const newMessage = {
+    id: idValue,
     from: fromValue,
     to: toValue,
     object: objectValue,
@@ -13,35 +14,57 @@ function addMessageTosent(fromValue, toValue, objectValue, messageValue) {
     }
     folders.sent.push(newMessage);
     folders.sent.reverse(newMessage);
+    if (currentFolderName === 'sent' ) {
+      selectFolder(currentFolderName);
+    }
 }
-// template html
-function addMessage(from, to, object, message) {
+// row email
+function addMessageToDOM(id, from, to, object, message) {
   var addNewMail = document.createElement("div");
   addNewMail.classList.add("emailRow");
-  addNewMail.setAttribute("id", "emailRow");
+  addNewMail.setAttribute("id", id);
 
-var messageTemplate = '<div class="emailRow__options">' +
- ' <input type="checkbox" class="check"/> ' +
+var messageTemplate = 
+'<div class="emailRow__options">' +
+  ' <input type="checkbox" class="check"/> ' +
 '</div>' +
 '<h3 class="emailRow__title">'+from+'</h3>'+ 
 '<div class="emailRow__message">' +
-'<h4>'+object+
-  '<span class="emailRow__description">'+ ' - ' +message+'</span>'+
-'</h4>'+ '<button type="button" class="trash" id="trash" onclick="trash(this)"><span><i class="fa fa-trash fa-lg" aria-hidden="true"></i></span></button>'+
-'</div>'+'<p class="emailRow__time">'+'10 apr'+'</p>';
+  '<h4>'
+    +object+
+    '<span class="emailRow__description">'+ ' - ' +message+'</span>'+
+  '</h4>'+ 
+  '<button type="button" class="trash" id="trash" onclick="trash('+ id +', this)">'+
+    '<span><i class="fa fa-trash fa-lg" aria-hidden="true"></i></span>'+
+  '</button>'+
+'</div>'+
+'<p class="emailRow__time">'+'10 apr'+'</p>';
   addNewMail.innerHTML = messageTemplate;
   document.getElementById("newMessage").appendChild(addNewMail);
 };
+// end row email
 
-// Elimino email
-function trash(event){
-  const emailRow = event.parentNode.parentNode;
-  emailRow.remove();
+function generateEmailId(){
+    return Date.now();
+
 }
-
+// delet email
+function trash(idTodelet,event){
+  for (var i = 0; i < currentFolder.length; i++) {
+   console.log("valore di: i", i);
+   console.log(currentFolder[i].id);
+   if (idTodelet === currentFolder[i].id) {
+     currentFolder.splice(i, 1)
+     // rimuovi 1 prima dell'indice 
+   }
+  }
+  selectFolder(currentFolderName);
+}
+// end delet mail
 
 function trashFull() {
-  document.getElementById("emailRow").remove();
+  alert("da implementare ToDo");
+  // document.getElementById("emailRow").remove();
 }
 
 // Checkbox
@@ -97,17 +120,19 @@ full.onclick = checkFull;
 console.log("Ci sono "+messageList.length+ " messaggi");
 */
 function loadMessages() { // sostituire messlist con currentFolder - fatto
-  window.addMessage(currentFolder[0].from, currentFolder[0].to, currentFolder[0].object, currentFolder[0].message);
+  window.addMessageToDOM(currentFolder[0].id, currentFolder[0].from, currentFolder[0].to, currentFolder[0].object, currentFolder[0].message);
 }
 
 folders = {
   inbox: [  {
+    id: 1653053654211,
     from: " Andrea",
     to: "andrea@mail.it",
     object: "Corso",
     message: "Corso in preparazione",
   },
   {
+    id: 1653053833375,
     from: " Luca",
     to: "luca@mail.it",
     object: "Corso",
@@ -116,6 +141,7 @@ folders = {
   ],
   sent: [
     {
+      id: 1653053804204,
       from: " Andrea",
       to: "andrea@mail.it",
       object: "inviato",
@@ -126,7 +152,7 @@ folders = {
 
 }
 
-currentFolderName = "sent";
+currentFolderName = "inbox";
 currentFolder = folders[currentFolderName]
 
 
@@ -137,7 +163,7 @@ function selectFolder(folderName) {
   currentFolder = folders[currentFolderName]
   removeAllMessages()
   for (var i = 0; i < currentFolder.length; i++) {
-    window.addMessage(currentFolder[i].from, currentFolder[i].to, currentFolder[i].object, currentFolder[i].message);
+    window.addMessageToDOM(currentFolder[i].id, currentFolder[i].from, currentFolder[i].to, currentFolder[i].object, currentFolder[i].message);
   }
   // sidebarSelected(folderName)
 // to do selezionare div corrente con class sidebar clicked 
@@ -149,6 +175,8 @@ function selectFolder(folderName) {
 
 // element selected menu sidebar 
 // aggiungere Foldername
+
+// 
 function menuListener(folderName) {
 var menuSidebar = document.getElementById("menu__sidebar");
 var sidebarOption = menuSidebar.getElementsByClassName("sidebarOption");
@@ -201,7 +229,17 @@ $(document).ready(function () {
   });
 });
 
+// Array
 
 
+function counter() {
+let even = [2, 4, 6, 8, 10];
+let shots = [1, 3, 5, 7, 9];
 
-
+for (let i = 0; i < even.length; i++) {
+  console.log(even[i]* 10);
+  console.log(shots[i]* 10);
+  console.log(even + shots);
+}
+}
+counter();
